@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[折迹的博客]]></title>
-  <link href="http://ruanjianbai.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 这是我搭建的第一个博客，先写点测试一下，后面好好写！ | 折迹的博客]]></title>
+  <link href="http://ruanjianbai.github.io/blog/categories/zhe-shi-wo-da-jian-de-di-[?]-ge-bo-ke-,xian-xie-dian-ce-shi-[?]-xia-,hou-mian-hao-hao-xie-!/atom.xml" rel="self"/>
   <link href="http://ruanjianbai.github.io/"/>
   <updated>2015-05-08T18:08:40+08:00</updated>
   <id>http://ruanjianbai.github.io/</id>
