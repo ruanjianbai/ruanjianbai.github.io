@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://ruanjianbai.github.io/sitemap.xml 
