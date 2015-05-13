@@ -6,7 +6,7 @@ url: http://bylu.me
 title: 折迹的博客
 subtitle: 爱技术，爱生活。
 author: 白 禄
-simple_search: https://duckduckgo.com/search
+simple_search: https://duckduckgo.com/?sites=bylu.me
 description: 这是我的技术博客
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
@@ -65,14 +65,14 @@ page_asides: [asides/recent_posts.html, custom/asides/category_list.html]
 # ----------------------- #
 
 # Github repositories
-github_user: ruanjianbai
-github_repo_count: 2
-github_show_profile_link: true
-github_skip_forks: false
+#github_user: ruanjianbai
+#github_repo_count: 2
+#github_show_profile_link: true
+#github_skip_forks: false
 
 # Twitter
-twitter_user: 
-twitter_tweet_button: false
+#twitter_user: 
+#twitter_tweet_button: false
 
 # Google +1
 #google_plus_one: false
@@ -80,23 +80,23 @@ twitter_tweet_button: false
 
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
-googleplus_user: 
-googleplus_hidden: true
+#googleplus_user: 
+#googleplus_hidden: true
 
 # Pinboard
-pinboard_user:
-pinboard_count: 3
+#pinboard_user:
+#pinboard_count: 3
 
 # Delicious
-delicious_user:
-delicious_count: 3
+#delicious_user:
+#delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: bylu
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id:
+#google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+#facebook_like: false
