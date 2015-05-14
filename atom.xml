@@ -4,7 +4,7 @@
   <title><![CDATA[折迹的博客]]></title>
   <link href="http://bylu.me/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-05-14T11:45:52+08:00</updated>
+  <updated>2015-05-14T16:08:21+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[写给十年后的自己]]></title>
+    <link href="http://bylu.me/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/"/>
+    <updated>2015-05-14T15:55:23+08:00</updated>
+    <id>http://bylu.me/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji</id>
+    <content type="html"><![CDATA[<h4>搭建这个博客的初衷：</h4>
+
+<ol>
+<li>这个博客主要是写给自己看的。</li>
+<li>纪录自己的学习生活，方便后面查阅。</li>
+<li>通过写博客的方式，可以促进自己去总结，也可以锻炼自己的表达，克服懒惰。</li>
+<li>与时代接轨，熟练使用Git,Github,markdown等。</li>
+</ol>
+
+
+<p>很早就有搭建一个博客的想法，一直忙于工作再加上自己懒惰，最近刚好有空，基于这些想法，也为了实现这些想法，开始付诸行动，我也不希望一时头热来做这件事情，希望能够坚持。</p>
+
+<p>在老婆的支持下，bylu.me 这个域名买了十年。</p>
+
+<p>我把这些内容写在最前面，让自己不要忘记。</p>
+
+<p>十年后回头再看自己曾经走过的路。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[写在最前面]]></title>
