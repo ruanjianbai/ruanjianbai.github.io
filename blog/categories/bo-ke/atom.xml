@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-06-12T18:13:12+08:00</updated>
+  <updated>2015-06-12T19:35:07+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[写博客]]></title>
+    <link href="http://bylu.me/blog/2015/06/12/xie-bo-ke-bu-zou/"/>
+    <updated>2015-06-12T18:26:10+08:00</updated>
+    <id>http://bylu.me/blog/2015/06/12/xie-bo-ke-bu-zou</id>
+    <content type="html"><![CDATA[<p>写一篇博客的常用步骤，总结如下：</p>
+
+<p>首先新建博客</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">new_post</span><span class="o">[&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">title</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;]</span>
+</span></code></pre></td></tr></table></div></figure>
+这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章，</p>
+
+<p>生成博客
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">generate</span>
+</span><span class='line'><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</span><span class='line'><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="o">;</span><span class="n">change</span> <span class="n">log</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+预览博客
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure>
+在浏览器里打开 <a href="http://localhost:4000/">http://localhost:4000/</a> 进行预览，</p>
+
+<p>发布文章
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">deploy</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>每次写完都要将本地source资源推送到github上
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">source</span>
+</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[写给十年后的自己]]></title>
