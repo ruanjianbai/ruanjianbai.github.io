@@ -9,10 +9,20 @@
   <meta name="author" content="白 禄">
 
   
-  <meta name="description" content="搭建这个博客的初衷： &nbsp;1.&nbsp;这个博客主要是写给自己看的。
-&nbsp;2.&nbsp;纪录自己的学习生活，方便后面查阅。
-&nbsp;3.&nbsp;通过写博客的方式，可以促进自己去总结，也可以锻炼自己的表达，克服懒惰。
-&nbsp;4.&nbsp;与时代接轨，熟练使用 &hellip;">
+  <meta name="description" content="总结一下在Android 中常用的网络判断代码。 判断是否有网代码如下： 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+public static boolean isNetworkAvailable(Context context) { ConnectivityManager &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +78,171 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/12/android-wang-luo-pan-duan/", text-decoration: none>Android 网络判断</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-12T16:51:05+08:00'><span class='date'>2015 年 6 月 12 日</span> <span class='time'>4:51 pm</span></time>
+        
+           | <a href="/blog/2015/06/12/android-wang-luo-pan-duan/#disqus_thread"
+             data-disqus-identifier="http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan/">评论</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>总结一下在Android 中常用的网络判断代码。</p>
+
+<p>判断是否有网代码如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNetworkAvailable</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">context</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Context</span><span class="o">.</span><span class="na">CONNECTIVITY_SERVICE</span><span class="o">);</span>
+</span><span class='line'>    <span class="c1">//这行代码需要权限android.permission.ACCESS_NETWORK_STATE</span>
+</span><span class='line'>    <span class="c1">//如果没有连接网络就会返回null</span>
+</span><span class='line'>    <span class="n">NetworkInfo</span> <span class="n">activeNetworkInfo</span> <span class="o">=</span> <span class="n">mConnectivityManager</span><span class="o">.</span><span class="na">getActiveNetworkInfo</span><span class="o">();</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">activeNetworkInfo</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//即使网络连接着，也可能没有网</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">activeNetworkInfo</span><span class="o">.</span><span class="na">isAvailable</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="c1">//没有网络连接</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>网络类型：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_WIFI</span> <span class="o">=</span> <span class="s">&quot;wifi&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_2G</span> <span class="o">=</span> <span class="s">&quot;2G&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_3G</span> <span class="o">=</span> <span class="s">&quot;3G&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_4G</span> <span class="o">=</span> <span class="s">&quot;4G&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_UNKNOWN</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>判断当前网络类型：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getNetworkType</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">){</span>
+</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">context</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Context</span><span class="o">.</span><span class="na">CONNECTIVITY_SERVICE</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">NetworkInfo</span> <span class="n">activeNetworkInfo</span> <span class="o">=</span> <span class="n">mConnectivityManager</span><span class="o">.</span><span class="na">getActiveNetworkInfo</span><span class="o">();</span>
+</span><span class='line'>    <span class="k">if</span><span class="o">(</span><span class="n">activeNetworkInfo</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">NETWORK_TYPE_UNKNOWN</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="c1">//首先判断当前网络是WIFI连接还是MOBILE连接</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">.</span><span class="na">TYPE_WIFI</span> <span class="o">==</span> <span class="n">activeNetworkInfo</span><span class="o">.</span><span class="na">getType</span><span class="o">()){</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">NETWORK_TYPE_WIFI</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nf">getNetworkClass</span><span class="o">(</span><span class="n">activeNetworkInfo</span><span class="o">.</span><span class="na">getSubtype</span><span class="o">());</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getNetworkClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">networkType</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">switch</span> <span class="o">(</span><span class="n">networkType</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_GPRS</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EDGE</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_CDMA</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_1xRTT</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_IDEN</span><span class="o">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">NETWORK_TYPE_2G</span><span class="o">;</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_UMTS</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EVDO_0</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EVDO_A</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_HSDPA</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_HSUPA</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_HSPA</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EVDO_B</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EHRPD</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_HSPAP</span><span class="o">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">NETWORK_TYPE_3G</span><span class="o">;</span>
+</span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_LTE</span><span class="o">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">NETWORK_TYPE_4G</span><span class="o">;</span>
+</span><span class='line'>        <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">NETWORK_TYPE_UNKNOWN</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -169,6 +344,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/12/android-wang-luo-pan-duan/">Android 网络判断</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/">写给十年后的自己</a>
       </li>
     
@@ -181,7 +360,8 @@
 <section>
   <h1>分类</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/bo-ke/'>博客 (2)</a></li>
+    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/blog/categories/bo-ke/'>博客 (2)</a></li>
 
   </ul>
 </section>

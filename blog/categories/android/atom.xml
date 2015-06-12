@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[折迹的博客]]></title>
-  <link href="http://bylu.me/atom.xml" rel="self"/>
+  <title><![CDATA[分类：android | 折迹的博客]]></title>
+  <link href="http://bylu.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
   <updated>2015-06-12T18:13:12+08:00</updated>
   <id>http://bylu.me/</id>
@@ -20,8 +20,7 @@
     <id>http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan</id>
     <content type="html"><![CDATA[<p>总结一下在Android 中常用的网络判断代码。</p>
 
-<p>判断是否有网代码如下：</p>
-
+<p>判断是否有网代码如下：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -36,7 +35,7 @@
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNetworkAvailable</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)</span>  <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
 </span><span class='line'>    <span class="n">context</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Context</span><span class="o">.</span><span class="na">CONNECTIVITY_SERVICE</span><span class="o">);</span>
 </span><span class='line'>    <span class="c1">//这行代码需要权限android.permission.ACCESS_NETWORK_STATE</span>
 </span><span class='line'>    <span class="c1">//如果没有连接网络就会返回null</span>
@@ -48,26 +47,22 @@
 </span><span class='line'>    <span class="c1">//没有网络连接</span>
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></p>
 
-
-<p>网络类型：</p>
-
+<p>网络类型：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_WIFI</span> <span class="o">=</span> <span class="s">&quot;wifi&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_2G</span> <span class="o">=</span> <span class="s">&quot;2G&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_3G</span> <span class="o">=</span> <span class="s">&quot;3G&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_4G</span> <span class="o">=</span> <span class="s">&quot;4G&quot;</span><span class="o">;</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_UNKNOWN</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span><span class="o">;</span>
-</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_WIFI</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">wifi</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_2G</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="mi">2</span><span class="n">G</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_3G</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="mi">3</span><span class="n">G</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_4G</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="mi">4</span><span class="n">G</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;;</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NETWORK_TYPE_UNKNOWN</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">unknown</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
-
-<p>判断当前网络类型：</p>
-
+<p>判断当前网络类型：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -109,7 +104,7 @@
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getNetworkType</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">){</span>
-</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">ConnectivityManager</span> <span class="n">mConnectivityManager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">)&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
 </span><span class='line'>    <span class="n">context</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Context</span><span class="o">.</span><span class="na">CONNECTIVITY_SERVICE</span><span class="o">);</span>
 </span><span class='line'>    <span class="n">NetworkInfo</span> <span class="n">activeNetworkInfo</span> <span class="o">=</span> <span class="n">mConnectivityManager</span><span class="o">.</span><span class="na">getActiveNetworkInfo</span><span class="o">();</span>
 </span><span class='line'>    <span class="k">if</span><span class="o">(</span><span class="n">activeNetworkInfo</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
@@ -120,11 +115,11 @@
 </span><span class='line'>        <span class="k">return</span> <span class="n">NETWORK_TYPE_WIFI</span><span class="o">;</span>
 </span><span class='line'>    <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
 </span><span class='line'>        <span class="k">return</span> <span class="nf">getNetworkClass</span><span class="o">(</span><span class="n">activeNetworkInfo</span><span class="o">.</span><span class="na">getSubtype</span><span class="o">());</span>
-</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getNetworkClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">networkType</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getNetworkClass</span><span class="o">(</span><span class="kt">int</span> <span class="n">networkType</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>    <span class="k">switch</span> <span class="o">(</span><span class="n">networkType</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_GPRS</span><span class="o">:</span>
 </span><span class='line'>        <span class="k">case</span> <span class="n">TelephonyManager</span><span class="o">.</span><span class="na">NETWORK_TYPE_EDGE</span><span class="o">:</span>
@@ -148,46 +143,7 @@
 </span><span class='line'>            <span class="k">return</span> <span class="n">NETWORK_TYPE_UNKNOWN</span><span class="o">;</span>
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[写给十年后的自己]]></title>
-    <link href="http://bylu.me/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/"/>
-    <updated>2015-05-14T15:55:23+08:00</updated>
-    <id>http://bylu.me/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji</id>
-    <content type="html"><![CDATA[<h3>搭建这个博客的初衷：</h3>
-
-<p>&nbsp;1.&nbsp;这个博客主要是写给自己看的。<br/>
-&nbsp;2.&nbsp;纪录自己的学习生活，方便后面查阅。<br/>
-&nbsp;3.&nbsp;通过写博客的方式，可以促进自己去总结，也可以锻炼自己的表达，克服懒惰。<br/>
-&nbsp;4.&nbsp;与时代接轨，熟练使用 Git，Github，Markdown等。</p>
-
-<p>很早就有搭建一个博客的想法，一直忙于工作再加上自己懒惰，最近刚好有空，基于这些想法，也为了实现这些想法，开始付诸行动，我也不希望一时头热来做这件事情，希望能够坚持。</p>
-
-<p>在老婆的支持下，bylu.me 这个域名买了十年。</p>
-
-<p>我把这些内容写在最前面，让自己不要忘记。</p>
-
-<p>十年后回头再看自己曾经走过的路。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[写在最前面]]></title>
-    <link href="http://bylu.me/blog/2015/05/08/guan-yu-da-jian-bo-ke/"/>
-    <updated>2015-05-08T17:56:36+08:00</updated>
-    <id>http://bylu.me/blog/2015/05/08/guan-yu-da-jian-bo-ke</id>
-    <content type="html"><![CDATA[<p>这是我搭建的第一个博客，先写点测试一下，后面好好写！</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Systom</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello world&quot;</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
   </entry>
   
