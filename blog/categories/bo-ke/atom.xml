@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-09-25T13:41:43+08:00</updated>
+  <updated>2015-09-25T14:21:41+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -25,7 +25,8 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">new_post</span><span class="o">[&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">title</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;]</span>
 </span></code></pre></td></tr></table></div></figure>
-这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章，</p>
+这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章，
+注：如果shell由bash切换到了zsh，则直接输入rake new_post,然后会提示输入标题，再输入标题就可以了</p>
 
 <p>生成博客
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
