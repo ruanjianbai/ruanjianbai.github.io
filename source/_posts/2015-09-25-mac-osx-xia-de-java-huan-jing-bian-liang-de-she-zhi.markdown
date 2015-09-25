@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mac osx 下的java 环境变量的设置"
+title: "Mac 中配置java 环境"
 date: 2015-09-25 12:13:30 +0800
 comments: true
 categories: Mac
@@ -8,9 +8,11 @@ categories: Mac
 目前的mac osx 下默认是没有安装java的，
 
 ###通常安装jdk有三种方法：
-1. 在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了）
-2. 手动去oracle官网下载比较新的jdk版本进行安装
-3. 在终端执行brew-cask install java，自动安装好最新的java环境（该方法的前提是你要安装有brew-cask,有空再说该工具，先忍住不说）
+1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了）
+
+2.手动去oracle官网下载比较新的jdk版本进行安装
+
+3.在终端执行brew-cask install java，自动安装好最新的java环境（该方法的前提是你要安装有brew-cask,有空再说该工具，先忍住不说）
 
 ###设置环境变量
 	
