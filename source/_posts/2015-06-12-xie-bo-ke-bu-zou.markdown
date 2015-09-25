@@ -12,7 +12,8 @@ categories: 博客
 {% codeblock lang:java  %}
 rake new_post["title"]
 {% endcodeblock %}
-这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章，
+这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章
+
 注：如果shell由bash切换到了zsh，则直接输入rake new_post,然后会提示输入标题，再输入标题就可以了
 
 生成博客
