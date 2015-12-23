@@ -4,7 +4,11 @@
   <title><![CDATA[分类：mac | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
+<<<<<<< HEAD
   <updated>2015-12-23T18:11:57+08:00</updated>
+=======
+  <updated>2015-09-25T14:42:02+08:00</updated>
+>>>>>>> 81b382eb71172699f29d84fa44889ea6617ca26e
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -14,6 +18,7 @@
 
   
   <entry>
+<<<<<<< HEAD
     <title type="html"><![CDATA[解决 XtraFinder 在 OSX 10.11.1 中闪退问题]]></title>
     <link href="http://bylu.me/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/"/>
     <updated>2015-12-23T11:57:28+08:00</updated>
@@ -60,6 +65,8 @@
   </entry>
   
   <entry>
+=======
+>>>>>>> 81b382eb71172699f29d84fa44889ea6617ca26e
     <title type="html"><![CDATA[Mac 中配置java 环境]]></title>
     <link href="http://bylu.me/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/"/>
     <updated>2015-09-25T12:13:30+08:00</updated>
