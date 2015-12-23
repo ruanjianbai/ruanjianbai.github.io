@@ -4,7 +4,7 @@
   <title><![CDATA[折迹的博客]]></title>
   <link href="http://bylu.me/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-09-25T14:42:02+08:00</updated>
+  <updated>2015-12-23T18:11:57+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[解决 XtraFinder 在 OSX 10.11.1 中闪退问题]]></title>
+    <link href="http://bylu.me/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/"/>
+    <updated>2015-12-23T11:57:28+08:00</updated>
+    <id>http://bylu.me/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti</id>
+    <content type="html"><![CDATA[<h3>关于 OSX 10.11 系统完整保护（System Integrity Protection 后面简称SIP）</h3>
+
+<p>SIP阻止代码注入（code injection）以及很多其他事等</p>
+
+<p>XtraFinder通过代码注入到Finder应用进程来工作</p>
+
+<h3>如何让XtraFinder在OSX 10.11上可以正常使用</h3>
+
+<p>你需要部分（partially）禁止SIP（译注：启用SIP，关闭debug）</p>
+
+<p>并不建议完全禁止SIP，这样会让你的电脑安全性降低</p>
+
+<h3>如何部分禁止SIP</h3>
+
+<ol>
+<li>通过重启并且按住Common+R键进入Recovery界面</li>
+<li>启动顶部工具栏上的终端（terminal）</li>
+<li>输入命令如下命令然后再重启</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>csrutil enable --without debug</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>命令行csrutil enable &ndash;without debug做了什么</h3>
+
+<p>它允许代码注入</p>
+
+<p>这意味着XtraFinder能注入它的代码到Finder应用进程中</p>
+
+<h3>如何恢复SIP到原始状态</h3>
+
+<p>进入系统Recovery并在终端输入如下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>csrutil clear</span></code></pre></td></tr></table></div></figure>
+
+
+<p>本文内容翻译自XtraFinder官方文章： <a href="http://www.trankynam.com/xtrafinder/sip.html">http://www.trankynam.com/xtrafinder/sip.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mac 中配置java 环境]]></title>
