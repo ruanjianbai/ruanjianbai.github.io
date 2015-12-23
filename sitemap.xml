@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
     <loc>http://bylu.me/blog/archives/</loc>
   </url>
   <url>
     <loc>http://bylu.me/</loc>
+=======
+    <loc>http://bylu.me/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/</loc>
+    <lastmod>2015-09-25T12:13:30+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/2015/06/12/xie-bo-ke-bu-zou/</loc>
+    <lastmod>2015-06-12T18:26:10+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan/</loc>
+    <lastmod>2015-06-12T16:51:05+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/</loc>
+    <lastmod>2015-05-14T15:55:23+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/2015/05/08/guan-yu-da-jian-bo-ke/</loc>
+    <lastmod>2015-05-08T17:56:36+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://bylu.me/</loc>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/categories/bo-ke/</loc>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/categories/android/</loc>
+  </url>
+  <url>
+    <loc>http://bylu.me/blog/categories/mac/</loc>
+>>>>>>> 81b382eb71172699f29d84fa44889ea6617ca26e
   </url>
 </urlset>
