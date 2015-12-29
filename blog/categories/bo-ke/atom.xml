@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-12-23T18:45:30+08:00</updated>
+  <updated>2015-12-29T16:23:30+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[常用的markdown语法]]></title>
+    <link href="http://bylu.me/blog/2015/12/29/de-markdownyu-fa/"/>
+    <updated>2015-12-29T15:35:11+08:00</updated>
+    <id>http://bylu.me/blog/2015/12/29/de-markdownyu-fa</id>
+    <content type="html"><![CDATA[<p>原始markdown命令不被octopress解析
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">{%</span> <span class="n">codeblock</span> <span class="o">[</span><span class="nl">lang:</span><span class="n">language</span><span class="o">]</span> <span class="o">[</span><span class="n">title</span><span class="o">]</span> <span class="o">[</span><span class="n">url</span><span class="o">]</span> <span class="o">[</span><span class="n">link</span> <span class="n">text</span><span class="o">]</span> <span class="o">%}</span>
+</span><span class='line'><span class="n">code</span> <span class="n">snippet</span>
+</span><span class='line'><span class="o">{%</span> <span class="n">endcodeblock</span> <span class="o">%}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>{{ page.title }} {{ page.url }}</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[写博客]]></title>
