@@ -1,6 +1,6 @@
 article {
   padding-top: 1em;
-  a { @extend .force-wrap; }
+  a { @extend .force-wrap; text-decoration: none;}
   header {
     position: relative;
     padding-top: 2em;
@@ -92,10 +92,12 @@ article + article {
   article { padding-top: 2em; }
   article header { background: none; padding-bottom: 0; }
   article h1 {
-    font-size: 2.2em;
-    a { color: inherit; &:hover { color: $link-color-hover; } }
+    font-size: 1.8em;//文章首页各个文章的标题大小，原来是2.2
+    a { color: inherit; &:hover { color: $link-color-hover; } text-decoration: none;}
+    //这个地方增加text-decoration: none;去掉首页各个文章标题超链接的下划线
   }
   a[rel=full-article] {
+  text-decoration: none;
     background: darken($main-bg, 5);
     display: inline-block;
     padding: .4em .8em;

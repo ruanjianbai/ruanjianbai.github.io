@@ -9,18 +9,18 @@ categories: mac
 SIP阻止代码注入（code injection）以及很多其他事等
 
 XtraFinder通过代码注入到Finder应用进程来工作
-
+<!--more-->
 ###如何让XtraFinder在OSX 10.11上可以正常使用
 你需要部分（partially）禁止SIP（译注：启用SIP，关闭debug）
 
 并不建议完全禁止SIP，这样会让你的电脑安全性降低
 
 ###如何部分禁止SIP
-1. 通过重启并且按住Common+R键进入Recovery界面
+1. 通过重启并且按住`Common+R`键进入Recovery界面
 2. 启动顶部工具栏上的终端（terminal）
 3. 输入命令如下命令然后再重启
 
-{% codeblock %}
+{% codeblock lang:bash%}
 csrutil enable --without debug
 {% endcodeblock %}
 
@@ -32,10 +32,10 @@ csrutil enable --without debug
 ###如何恢复SIP到原始状态
 进入系统Recovery并在终端输入如下命令：
 
-{% codeblock %}
+{% codeblock  lang:bash%}
 csrutil clear
 {% endcodeblock %}
 
 
 
-本文内容翻译自XtraFinder官方文章： http://www.trankynam.com/xtrafinder/sip.html
+本文内容翻译自： http://www.trankynam.com/xtrafinder/sip.html

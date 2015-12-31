@@ -5,7 +5,7 @@ date: 2015-06-12 16:51:05 +0800
 comments: true
 categories: Android
 ---
-总结一下在Android 中常用的网络判断代码。
+总结一下在 Android 中常用的网络判断代码。
 
 判断是否有网代码如下：
 {% codeblock lang:java  %}
@@ -23,7 +23,7 @@ public static boolean isNetworkAvailable(Context context) {
     return false;
 }
 {% endcodeblock %}
-
+<!--more-->
 网络类型：
 {% codeblock lang:java %}
 public static final String NETWORK_TYPE_WIFI = "wifi";

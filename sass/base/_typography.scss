@@ -15,12 +15,13 @@ $header-subtitle-font-family: $heading-font-family !default;
 .mono { font-family: $mono; }
 
 body > header h1 {
-  font-size: 2.2em;
+  font-size: 1.8em;
   @extend .heading;
   font-family: $header-title-font-family;
   font-weight: normal;
   line-height: 1.2em;
   margin-bottom: 0.6667em;
+  text-decoration: none;
 }
 body > header h2 {
   font-family: $header-subtitle-font-family;
@@ -32,13 +33,14 @@ body {
   @extend .serif;
 }
 h1 {
-  font-size: 2.2em;
+  font-size: 1.8em;
   line-height: 1.2em;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 992px) {
   body { font-size: 1.15em; }
-  h1 { font-size: 2.6em; line-height: 1.2em; }
+  h1 { font-size: 1.8em; line-height: 1.2em; }//文章详情标题字体大小，原来是2.2
 }
 
 #{headings()}{
@@ -48,10 +50,10 @@ h1 {
   font-weight: bold;
 }
 h2, section h1 {
-  font-size: 1.5em;
+  font-size: 1.4em;//这个地方修改少了0.1
 }
 h3, section h2, section section h1 {
-  font-size: 1.3em;
+  font-size: 1.2em;//这个地方修改少了0.1
 }
 h4, section h3, section section h2, section section section h1 {
   font-size: 1em;
@@ -84,7 +86,7 @@ sup, sub { font-size: 0.75em; position: relative;  display: inline-block; paddin
 sup { top: -.5em; }
 sub { bottom: -.5em; }
 
-a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; }
+a[rev='footnote']{ font-size: .75em; padding: 0 .3em; line-height: 1; text-decoration: none;}
 
 q { font-style: italic;
   &:before { content: "\201C"; }
@@ -117,7 +119,7 @@ article blockquote {
   border-left: 4px solid rgba($text-color-light, .5);
   cite {
     font-style: italic;
-    a { color: $text-color-light !important; word-wrap: break-word; }
+    a { color: $text-color-light !important; word-wrap: break-word; text-decoration: none;}
     &:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
   }
   @media only screen and (min-width: 992px) {
