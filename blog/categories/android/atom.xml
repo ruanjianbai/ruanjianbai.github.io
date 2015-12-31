@@ -4,7 +4,7 @@
   <title><![CDATA[分类：android | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-12-29T16:23:30+08:00</updated>
+  <updated>2015-12-31T17:42:22+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan/"/>
     <updated>2015-06-12T16:51:05+08:00</updated>
     <id>http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan</id>
-    <content type="html"><![CDATA[<p>总结一下在Android 中常用的网络判断代码。</p>
+    <content type="html"><![CDATA[<p>总结一下在 Android 中常用的网络判断代码。</p>
 
 <p>判断是否有网代码如下：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -48,6 +48,9 @@
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
 </span></code></pre></td></tr></table></div></figure></p>
+
+<!--more-->
+
 
 <p>网络类型：
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mac 中配置java 环境 - 折迹的博客</title>
+  <title>Mac 中配置 Java 环境 - 折迹的博客</title>
   <meta name="author" content="白 禄">
 
   
-  <meta name="description" content="目前的mac osx 下默认是没有安装java的， 通常安装jdk有三种方法： 1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了） 2. &hellip;">
+  <meta name="description" content="目前的 MAC OSX 下默认是没有安装 Java 的， 通常安装jdk有三种方法： 1.在 terminal 下输入java，然后根据提示去下载苹果官方的 openJdk 进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用 jdk1.7 ， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -27,8 +27,8 @@
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
 
   
 
@@ -36,7 +36,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">折迹的博客</a></h1>
+  <h1><a href="/"，text-decoration: none;>折迹的博客</a></h1>
   
     <h2>爱技术，爱生活。</h2>
   
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Mac 中配置java 环境</h1>
+      <h1 class="entry-title">Mac 中配置 Java 环境</h1>
     
     
       <p class="meta">
@@ -80,69 +80,108 @@
 <time class='entry-date' datetime='2015-09-25T12:13:30+08:00'><span class='date'>2015 年 9 月 25 日</span> <span class='time'>12:13 pm</span></time>
         
            | <a href="#disqus_thread"
-             data-disqus-identifier="http://bylu.me">评论</a>
+             data-disqus-identifier="http://bylu.me" text-decoration: none;>评论</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>目前的mac osx 下默认是没有安装java的，</p>
+<div class="entry-content"><p>目前的 MAC OSX 下默认是没有安装 Java 的，</p>
 
 <h3>通常安装jdk有三种方法：</h3>
 
-<p>1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了）</p>
+<p>1.在 terminal 下输入<code>java</code>，然后根据提示去下载苹果官方的 openJdk 进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用 jdk1.7 ，该版本已经无法满足我们的需求了）</p>
 
-<p>2.手动去oracle官网下载比较新的jdk版本进行安装</p>
+<p>2.手动去 oracle 官网下载比较新的 jdk 版本进行安装</p>
 
-<p>3.在终端执行brew-cask install java，自动安装好最新的java环境（该方法的前提是你要安装有brew-cask,有空再说该工具，先忍住不说）</p>
+<p>3.在终端执行<code>brew-cask install java</code>，自动安装好最新的 java 环境（该方法的前提是你要安装有 brew-cask ,有空再说该工具，先忍住不说）</p>
 
 <h3>设置环境变量</h3>
 
-<pre><code>$ vim .bash_profile 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
+</span><span class='line'>  
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/bin:<span class="nv">$PATH</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
 
-export JAVA_HOME=$(/usr/libexec/java_home)
 
-export PATH=${JAVA_HOME}/bin:$PATH
+<!--more-->
 
-$ source .bash_profile
-
-$ echo $JAVA_HOME
-/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
-</code></pre>
 
 <h3>查看机器安装了哪些版本的jdk</h3>
 
-<pre><code>$ /usr/libexec/java_home -V
-Matching Java Virtual Machines (3):
-1.8.0_51, x86_64:   "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
-1.6.0_65-b14-468, x86_64:   "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-1.6.0_65-b14-468, i386: "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>/usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines <span class="o">(</span>3<span class="o">)</span>:
+</span><span class='line'>1.8.0_51, x86_64:<span class="s2">&quot;Java SE 8&quot;</span> /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
+</span><span class='line'>1.6.0_65-b14-468, x86_64:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>1.6.0_65-b14-468,i386:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
 
-<p> 此时我的电脑上安装了三个版本的jdk，默认使用最新的版本</p>
 
-<pre><code>$ java -version
-java version "1.8.0_51"
-Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
-Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)
-</code></pre>
+<p>
+此时我的电脑上安装了三个版本的 jdk ，默认使用最新的版本</p>
 
-<p>如果想切换到jdk1.6,则需要这样设置</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.8.0_51&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.8.0_51-b16<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 25.51-b03, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>$ vim .bash_profile 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
 
-$ source .bash_profile
-</code></pre>
+<p>   <br/>
+如果想切换到 jdk1.6 ,则需要这样设置</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home -v 1.6<span class="k">)</span>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 
 <p>此时，再查看</p>
 
-<pre><code>$ java -version
-java version "1.6.0_65"
-Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4828a)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.6.0_65&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.6.0_65-b14-468-11M4828a<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 20.65-b04-468, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 </div>
 
 
@@ -179,10 +218,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" title="Previous Post: 写博客">&laquo; 写博客</a>
+        <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" text-decoration: none;title="Previous Post: 写博客">&laquo; 写博客</a>
       
       
-        <a class="basic-alignment right" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/" title="Next Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">解决 XtraFinder 在 OSX 10.11.1 中闪退问题 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/"  text-decoration: none;title="Next Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">解决 XtraFinder 在 OSX 10.11.1 中闪退问题 &raquo;</a>
       
     </p>
   </footer>
@@ -203,7 +242,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的markdown语法</a>
+        <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的 Markdown 语法</a>
       </li>
     
       <li class="post">
@@ -211,7 +250,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
       </li>
     
       <li class="post">
-        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置java 环境</a>
+        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置 Java 环境</a>
       </li>
     
       <li class="post">
@@ -282,17 +321,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1404.34">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.9px; font: 13.0px Menlo; color: #2aa198; -webkit-text-stroke: #2aa198}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.9px; font: 13.0px Menlo; color: #586e75; -webkit-text-stroke: #586e75}
-    span.s1 {font-kerning: none; color: #268bd2; -webkit-text-stroke: 0px #268bd2}
-    span.s2 {font-kerning: none}
-    span.s3 {font-kerning: none; color: #586e75; -webkit-text-stroke: 0px #586e75}
-    span.s4 {font-kerning: none; color: #2aa198; -webkit-text-stroke: 0px #2aa198}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Menlo; color: #268bd2; -webkit-text-stroke: #268bd2}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1"><b>&lt;script </b>type=</span><span class="s2">&#8220;text/javascript&#8221;</span><span class="s3"> </span><span class="s1">src=</span><span class="s2">&#8220;http://arrow.scrolltotop.com/arrow37.js&#8221;</span><span class="s1"><b>&gt;&lt;/script&gt;</b></span></p>
-<p class="p2"><span class="s1"><b>&lt;noscript&gt;</b></span><span class="s2">Not seeing a </span><span class="s1"><b>&lt;a</b></span><span class="s2"> </span><span class="s1">href=</span><span class="s4">&#8220;http://www.scrolltotop.com/&#8221;</span><span class="s1"><b>&gt;</b></span><span class="s2">Scroll to Top Button</span><span class="s1"><b>&lt;/a&gt;</b></span><span class="s2">? Go to our FAQ page for more info.</span><span class="s1"><b>&lt;/noscript&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;script src=&#8221;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&#8221;&gt;&lt;/script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;script type=&#8221;text/javascript&#8221; src=&#8221;http://arrow.scrolltotop.com/arrow37.js&#8221;&gt;&lt;/script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;noscript&gt;Not seeing a &lt;a href=&#8221;http://www.scrolltotop.com/&#8221;&gt;Scroll to Top Button&lt;/a&gt;? Go to our FAQ page for more info.&lt;/noscript&gt;</b></span></p>
 </body>
 </html>
 

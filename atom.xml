@@ -4,7 +4,7 @@
   <title><![CDATA[折迹的博客]]></title>
   <link href="http://bylu.me/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2015-12-29T16:23:30+08:00</updated>
+  <updated>2015-12-31T17:42:22+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -14,22 +14,46 @@
 
   
   <entry>
-    <title type="html"><![CDATA[常用的markdown语法]]></title>
+    <title type="html"><![CDATA[常用的 Markdown 语法]]></title>
     <link href="http://bylu.me/blog/2015/12/29/de-markdownyu-fa/"/>
     <updated>2015-12-29T15:35:11+08:00</updated>
     <id>http://bylu.me/blog/2015/12/29/de-markdownyu-fa</id>
-    <content type="html"><![CDATA[<p>原始markdown命令不被octopress解析</p>
+    <content type="html"><![CDATA[<p>所有用到过的 Markdown 语法都总结记录在这里，持续更新。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">{%</span> <span class="n">codeblock</span> <span class="o">[</span><span class="nl">lang:</span><span class="n">language</span><span class="o">]</span> <span class="o">[</span><span class="n">title</span><span class="o">]</span> <span class="o">[</span><span class="n">url</span><span class="o">]</span> <span class="o">[</span><span class="n">link</span> <span class="n">text</span><span class="o">]</span> <span class="o">%}</span>
-</span><span class='line'><span class="n">code</span> <span class="n">snippet</span>
-</span><span class='line'><span class="o">{%</span> <span class="n">endcodeblock</span> <span class="o">%}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>代码块语法高亮语法：</p>
+
+<pre><code>{% codeblock [lang:language] [title] [url] [link text] %}
+code snippet
+{% endcodeblock %}
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>``` [language] [title] [url] [link text]
+code snippet
+```
+</code></pre>
+
+<p>单纯的代码块不显示行号以及语法高亮，只需要另起一行按<code>tab键</code></p>
+
+<!--more-->
 
 
-<p>{{ page.title }} {{ page.url }}</p>
+<p>标题语法：</p>
+
+<pre><code>#
+</code></pre>
+
+<p>几级标题就用几个井号</p>
+
+<p>命令、路径等内容通常使用如下语法，标示突出</p>
+
+<pre><code>`这个地方就是是命令或路径等关键字`
+</code></pre>
+
+<p>遇到原始语法关键字不被 Octopress 解析的情况，需要使用 &#123;% raw %&#125;  和 &#123;% endraw %&#125; 来包围</p>
+
+<p>如果出现了 <code>Liquid Exception: Unknown tag 'endraw' in _posts</code>这样的问题， 使用<code>&amp;#123;</code>代替 {，使用<code>&amp;#125;</code>代替 }</p>
 ]]></content>
   </entry>
   
@@ -44,6 +68,9 @@
 
 <p>XtraFinder通过代码注入到Finder应用进程来工作</p>
 
+<!--more-->
+
+
 <h3>如何让XtraFinder在OSX 10.11上可以正常使用</h3>
 
 <p>你需要部分（partially）禁止SIP（译注：启用SIP，关闭debug）</p>
@@ -53,14 +80,15 @@
 <h3>如何部分禁止SIP</h3>
 
 <ol>
-<li>通过重启并且按住Common+R键进入Recovery界面</li>
+<li>通过重启并且按住<code>Common+R</code>键进入Recovery界面</li>
 <li>启动顶部工具栏上的终端（terminal）</li>
 <li>输入命令如下命令然后再重启</li>
 </ol>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>csrutil enable --without debug</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>csrutil <span class="nb">enable</span> --without debug
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>命令行csrutil enable &ndash;without debug做了什么</h3>
@@ -74,74 +102,114 @@
 <p>进入系统Recovery并在终端输入如下命令：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>csrutil clear</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>csrutil clear
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>本文内容翻译自XtraFinder官方文章： <a href="http://www.trankynam.com/xtrafinder/sip.html">http://www.trankynam.com/xtrafinder/sip.html</a></p>
+<p>本文内容翻译自： <a href="http://www.trankynam.com/xtrafinder/sip.html">http://www.trankynam.com/xtrafinder/sip.html</a></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mac 中配置java 环境]]></title>
+    <title type="html"><![CDATA[Mac 中配置 Java 环境]]></title>
     <link href="http://bylu.me/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/"/>
     <updated>2015-09-25T12:13:30+08:00</updated>
     <id>http://bylu.me/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi</id>
-    <content type="html"><![CDATA[<p>目前的mac osx 下默认是没有安装java的，</p>
+    <content type="html"><![CDATA[<p>目前的 MAC OSX 下默认是没有安装 Java 的，</p>
 
 <h3>通常安装jdk有三种方法：</h3>
 
-<p>1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了）</p>
+<p>1.在 terminal 下输入<code>java</code>，然后根据提示去下载苹果官方的 openJdk 进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用 jdk1.7 ，该版本已经无法满足我们的需求了）</p>
 
-<p>2.手动去oracle官网下载比较新的jdk版本进行安装</p>
+<p>2.手动去 oracle 官网下载比较新的 jdk 版本进行安装</p>
 
-<p>3.在终端执行brew-cask install java，自动安装好最新的java环境（该方法的前提是你要安装有brew-cask,有空再说该工具，先忍住不说）</p>
+<p>3.在终端执行<code>brew-cask install java</code>，自动安装好最新的 java 环境（该方法的前提是你要安装有 brew-cask ,有空再说该工具，先忍住不说）</p>
 
 <h3>设置环境变量</h3>
 
-<pre><code>$ vim .bash_profile 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
+</span><span class='line'>  
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/bin:<span class="nv">$PATH</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
 
-export JAVA_HOME=$(/usr/libexec/java_home)
 
-export PATH=${JAVA_HOME}/bin:$PATH
+<!--more-->
 
-$ source .bash_profile
-
-$ echo $JAVA_HOME
-/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
-</code></pre>
 
 <h3>查看机器安装了哪些版本的jdk</h3>
 
-<pre><code>$ /usr/libexec/java_home -V
-Matching Java Virtual Machines (3):
-1.8.0_51, x86_64:   "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
-1.6.0_65-b14-468, x86_64:   "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-1.6.0_65-b14-468, i386: "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>/usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines <span class="o">(</span>3<span class="o">)</span>:
+</span><span class='line'>1.8.0_51, x86_64:<span class="s2">&quot;Java SE 8&quot;</span> /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
+</span><span class='line'>1.6.0_65-b14-468, x86_64:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>1.6.0_65-b14-468,i386:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
 
-<p> 此时我的电脑上安装了三个版本的jdk，默认使用最新的版本</p>
 
-<pre><code>$ java -version
-java version "1.8.0_51"
-Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
-Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)
-</code></pre>
+<p>
+此时我的电脑上安装了三个版本的 jdk ，默认使用最新的版本</p>
 
-<p>如果想切换到jdk1.6,则需要这样设置</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.8.0_51&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.8.0_51-b16<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 25.51-b03, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>$ vim .bash_profile 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
 
-$ source .bash_profile
-</code></pre>
+<p>   <br/>
+如果想切换到 jdk1.6 ,则需要这样设置</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home -v 1.6<span class="k">)</span>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 
 <p>此时，再查看</p>
 
-<pre><code>$ java -version
-java version "1.6.0_65"
-Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4828a)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.6.0_65&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.6.0_65-b14-468-11M4828a<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 20.65-b04-468, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 ]]></content>
   </entry>
   
@@ -155,45 +223,48 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 <p>首先新建博客</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">new_post</span><span class="o">[</span><span class="s">&quot;title&quot;</span><span class="o">]</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章</p>
+<p>这时候在<code>source/_posts/</code>目录下自动生成对应标题的 markdown 文件，在该文件里写文章</p>
 
-<p>注：如果shell由bash切换到了zsh，则直接输入rake new_post,然后会提示输入标题，再输入标题就可以了</p>
+<p>注：如果 shell 由 bash 切换到了 zsh ，则直接输入<code>rake new_post</code>，然后会提示输入标题，再输入标题就可以了</p>
+
+<!--more-->
+
 
 <p>生成博客</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">generate</span>
-</span><span class='line'><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</span><span class='line'><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="err">&#39;</span><span class="n">change</span> <span class="n">log</span><span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;change log&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>预览博客</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">preview</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>在浏览器里打开 <a href="http://localhost:4000/">http://localhost:4000/</a> 进行预览，</p>
+<p>在浏览器里打开 <code>http://localhost:4000/</code> 进行预览，</p>
 
 <p>发布文章</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">deploy</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake deploy
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>每次写完都要将本地source资源推送到github上</p>
+<p>每次写完都要将本地 source 资源推送到 github 上</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">source</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git push origin <span class="nb">source</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
@@ -204,7 +275,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
     <link href="http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan/"/>
     <updated>2015-06-12T16:51:05+08:00</updated>
     <id>http://bylu.me/blog/2015/06/12/android-wang-luo-pan-duan</id>
-    <content type="html"><![CDATA[<p>总结一下在Android 中常用的网络判断代码。</p>
+    <content type="html"><![CDATA[<p>总结一下在 Android 中常用的网络判断代码。</p>
 
 <p>判断是否有网代码如下：</p>
 
@@ -235,6 +306,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
 
 
 <p>网络类型：</p>
@@ -355,7 +429,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 
 <p>很早就有搭建一个博客的想法，一直忙于工作再加上自己懒惰，最近刚好有空，基于这些想法，也为了实现这些想法，开始付诸行动，我也不希望一时头热来做这件事情，希望能够坚持。</p>
 
-<p>在老婆的支持下，bylu.me 这个域名买了十年。</p>
+<p>在老婆的支持下，<code>bylu.me</code>这个域名买了十年。</p>
 
 <p>我把这些内容写在最前面，让自己不要忘记。</p>
 

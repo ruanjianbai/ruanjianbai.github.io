@@ -5,16 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>常用的markdown语法 - 折迹的博客</title>
+  <title>常用的 Markdown 语法 - 折迹的博客</title>
   <meta name="author" content="白 禄">
 
   
-  <meta name="description" content="原始markdown命令不被octopress解析 1
-2
-3
-{% codeblock [lang:language] [title] [url] [link text] %}
+  <meta name="description" content="所有用到过的 Markdown 语法都总结记录在这里，持续更新。 代码块语法高亮语法： {% codeblock [lang:language] [title] [url] [link text] %}
 code snippet
-{% endcodeblock %} {{ page.title }} {{ page. &hellip;">
+{% endcodeblock %} 或者 ``` [ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -32,8 +29,8 @@ code snippet
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
 
   
 
@@ -41,7 +38,7 @@ code snippet
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">折迹的博客</a></h1>
+  <h1><a href="/"，text-decoration: none;>折迹的博客</a></h1>
   
     <h2>爱技术，爱生活。</h2>
   
@@ -73,7 +70,7 @@ code snippet
   
   <header>
     
-      <h1 class="entry-title">常用的markdown语法</h1>
+      <h1 class="entry-title">常用的 Markdown 语法</h1>
     
     
       <p class="meta">
@@ -85,25 +82,49 @@ code snippet
 <time class='entry-date' datetime='2015-12-29T15:35:11+08:00'><span class='date'>2015 年 12 月 29 日</span> <span class='time'>3:35 pm</span></time>
         
            | <a href="#disqus_thread"
-             data-disqus-identifier="http://bylu.me">评论</a>
+             data-disqus-identifier="http://bylu.me" text-decoration: none;>评论</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>原始markdown命令不被octopress解析</p>
+<div class="entry-content"><p>所有用到过的 Markdown 语法都总结记录在这里，持续更新。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">{%</span> <span class="n">codeblock</span> <span class="o">[</span><span class="nl">lang:</span><span class="n">language</span><span class="o">]</span> <span class="o">[</span><span class="n">title</span><span class="o">]</span> <span class="o">[</span><span class="n">url</span><span class="o">]</span> <span class="o">[</span><span class="n">link</span> <span class="n">text</span><span class="o">]</span> <span class="o">%}</span>
-</span><span class='line'><span class="n">code</span> <span class="n">snippet</span>
-</span><span class='line'><span class="o">{%</span> <span class="n">endcodeblock</span> <span class="o">%}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>代码块语法高亮语法：</p>
+
+<pre><code>{% codeblock [lang:language] [title] [url] [link text] %}
+code snippet
+{% endcodeblock %}
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>``` [language] [title] [url] [link text]
+code snippet
+```
+</code></pre>
+
+<p>单纯的代码块不显示行号以及语法高亮，只需要另起一行按<code>tab键</code></p>
+
+<!--more-->
 
 
-<p>{{ page.title }} {{ page.url }}</p>
+<p>标题语法：</p>
+
+<pre><code>#
+</code></pre>
+
+<p>几级标题就用几个井号</p>
+
+<p>命令、路径等内容通常使用如下语法，标示突出</p>
+
+<pre><code>`这个地方就是是命令或路径等关键字`
+</code></pre>
+
+<p>遇到原始语法关键字不被 Octopress 解析的情况，需要使用 &#123;% raw %&#125;  和 &#123;% endraw %&#125; 来包围</p>
+
+<p>如果出现了 <code>Liquid Exception: Unknown tag 'endraw' in _posts</code>这样的问题， 使用<code>&amp;#123;</code>代替 {，使用<code>&amp;#125;</code>代替 }</p>
 </div>
 
 
@@ -140,7 +161,7 @@ code snippet
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/" title="Previous Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">&laquo; 解决 XtraFinder 在 OSX 10.11.1 中闪退问题</a>
+        <a class="basic-alignment left" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/" text-decoration: none;title="Previous Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">&laquo; 解决 XtraFinder 在 OSX 10.11.1 中闪退问题</a>
       
       
     </p>
@@ -162,7 +183,7 @@ code snippet
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的markdown语法</a>
+        <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的 Markdown 语法</a>
       </li>
     
       <li class="post">
@@ -170,7 +191,7 @@ code snippet
       </li>
     
       <li class="post">
-        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置java 环境</a>
+        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置 Java 环境</a>
       </li>
     
       <li class="post">
@@ -241,17 +262,14 @@ code snippet
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1404.34">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.9px; font: 13.0px Menlo; color: #2aa198; -webkit-text-stroke: #2aa198}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.9px; font: 13.0px Menlo; color: #586e75; -webkit-text-stroke: #586e75}
-    span.s1 {font-kerning: none; color: #268bd2; -webkit-text-stroke: 0px #268bd2}
-    span.s2 {font-kerning: none}
-    span.s3 {font-kerning: none; color: #586e75; -webkit-text-stroke: 0px #586e75}
-    span.s4 {font-kerning: none; color: #2aa198; -webkit-text-stroke: 0px #2aa198}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 13.0px Menlo; color: #268bd2; -webkit-text-stroke: #268bd2}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1"><b>&lt;script </b>type=</span><span class="s2">&#8220;text/javascript&#8221;</span><span class="s3"> </span><span class="s1">src=</span><span class="s2">&#8220;http://arrow.scrolltotop.com/arrow37.js&#8221;</span><span class="s1"><b>&gt;&lt;/script&gt;</b></span></p>
-<p class="p2"><span class="s1"><b>&lt;noscript&gt;</b></span><span class="s2">Not seeing a </span><span class="s1"><b>&lt;a</b></span><span class="s2"> </span><span class="s1">href=</span><span class="s4">&#8220;http://www.scrolltotop.com/&#8221;</span><span class="s1"><b>&gt;</b></span><span class="s2">Scroll to Top Button</span><span class="s1"><b>&lt;/a&gt;</b></span><span class="s2">? Go to our FAQ page for more info.</span><span class="s1"><b>&lt;/noscript&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;script src=&#8221;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&#8221;&gt;&lt;/script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;script type=&#8221;text/javascript&#8221; src=&#8221;http://arrow.scrolltotop.com/arrow37.js&#8221;&gt;&lt;/script&gt;</b></span></p>
+<p class="p1"><span class="s1"><b>&lt;noscript&gt;Not seeing a &lt;a href=&#8221;http://www.scrolltotop.com/&#8221;&gt;Scroll to Top Button&lt;/a&gt;? Go to our FAQ page for more info.&lt;/noscript&gt;</b></span></p>
 </body>
 </html>
 
