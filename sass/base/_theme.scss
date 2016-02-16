@@ -78,7 +78,7 @@ html {
   text-decoration: none;
 }
 body {
-  > div {
+  > div:not(#topcontrol) {
     background: $sidebar-bg $noise-bg;
     border-bottom: 1px solid $page-border-bottom;
     > div {
