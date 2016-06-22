@@ -28,7 +28,7 @@ figure.code, .gist-file, pre {
 }
 
 .gist .highlight, figure.code .highlight {
-  @include selection(adjust-color($base03, $lightness: 23%, $saturation: -65%), $text-shadow: $base03 0 1px);
+ // @include selection(#AFD6FF);
 }
 html .gist .gist-file {
   margin-bottom: 1.8em;
@@ -219,7 +219,7 @@ pre, .highlight, .gist-highlight {
 figure.code {
   background: none;
   padding: 0;
-  border: 0;
+  border: 1;
   margin-bottom: 1.5em;
   pre { margin-bottom: 0; }
   figcaption {
@@ -242,7 +242,7 @@ figure.code {
   margin-bottom: 0;
   @include border-top-radius(5px);
   font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
-  background: #aaaaaa image-url("code_bg.png") top repeat-x;
+  background: #890606 image-url("code_bg.png") top repeat-x;
   border: 1px solid #565656;
   border-top-color: #cbcbcb;
   border-left-color: #a5a5a5;
