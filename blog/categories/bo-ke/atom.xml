@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2016-06-22T14:53:24+08:00</updated>
+  <updated>2016-06-22T15:53:09+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,52 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[常用的 Markdown 语法]]></title>
-    <link href="http://bylu.me/blog/2015/12/29/de-markdownyu-fa/"/>
-    <updated>2015-12-29T15:35:11+08:00</updated>
-    <id>http://bylu.me/blog/2015/12/29/de-markdownyu-fa</id>
-    <content type="html"><![CDATA[<p>所有用到过的 Markdown 语法都总结记录在这里，持续更新。</p>
-
-<p>代码块语法高亮语法：
-    
-    {% codeblock [lang:language] [title] [url] [link text] %}
-    code snippet
-    {% endcodeblock %}
-    </p>
-
-<p>或者</p>
-
-<pre><code>``` [language] [title] [url] [link text]
-code snippet
-```
-</code></pre>
-
-<p>单纯的代码块不显示行号以及语法高亮，只需要另起一行按<code>tab键</code></p>
-
-<!--more-->
-
-
-<p>标题语法：</p>
-
-<pre><code>
-#
-
-</code></pre>
-
-<p>几级标题就用几个井号</p>
-
-<p>命令、路径等内容通常使用如下语法，标示突出</p>
-
-<pre><code>`这个地方就是是命令或路径等关键字`
-</code></pre>
-
-<p>遇到原始语法关键字不被 Octopress 解析的情况，需要使用 &#123;% raw %&#125;  和 &#123;% endraw %&#125; 来包围</p>
-
-<p>如果出现了 <code>Liquid Exception: Unknown tag 'endraw' in _posts</code>这样的问题， 使用<code>&amp;#123;</code>代替 {，使用<code>&amp;#125;</code>代替 }</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[写博客]]></title>
@@ -69,37 +23,34 @@ code snippet
 <p>首先新建博客</p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post<span class="o">[</span><span class="p">&amp;</span>ldquo<span class="p">;</span>title<span class="p">&amp;</span>rdquo<span class="p">;</span><span class="o">]</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">new_post</span><span class="o">[&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">title</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;]</span>
 </span></code></pre></td></tr></table></div></figure>
-这时候在<code>source/_posts/</code>目录下自动生成对应标题的 markdown 文件，在该文件里写文章</p>
+这时候在source/_posts/目录下自动生成对应标题的markdown文件，在该文件里写文章</p>
 
-<p>注：如果 shell 由 bash 切换到了 zsh ，则直接输入<code>rake new_post</code>，然后会提示输入标题，再输入标题就可以了</p>
-
-<!--more-->
-
+<p>注：如果shell由bash切换到了zsh，则直接输入rake new_post,然后会提示输入标题，再输入标题就可以了</p>
 
 <p>生成博客
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="p">&amp;</span>lsquo<span class="p">;</span>change log<span class="p">&amp;</span>rsquo<span class="p">;</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">generate</span>
+</span><span class='line'><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</span><span class='line'><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="o">;</span><span class="n">change</span> <span class="n">log</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="o">;</span>
 </span></code></pre></td></tr></table></div></figure>
 预览博客
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">preview</span>
 </span></code></pre></td></tr></table></div></figure>
-在浏览器里打开 <code>http://localhost:4000/</code> 进行预览，</p>
+在浏览器里打开 <a href="http://localhost:4000/">http://localhost:4000/</a> 进行预览，</p>
 
 <p>发布文章
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake deploy
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">rake</span> <span class="n">deploy</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
-<p>每次写完都要将本地 source 资源推送到 github 上
+<p>每次写完都要将本地source资源推送到github上
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git push origin <span class="nb">source</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">source</span>
 </span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
   </entry>
@@ -118,7 +69,7 @@ code snippet
 
 <p>很早就有搭建一个博客的想法，一直忙于工作再加上自己懒惰，最近刚好有空，基于这些想法，也为了实现这些想法，开始付诸行动，我也不希望一时头热来做这件事情，希望能够坚持。</p>
 
-<p>在老婆的支持下，<code>bylu.me</code>这个域名买了十年。</p>
+<p>在老婆的支持下，bylu.me 这个域名买了十年。</p>
 
 <p>我把这些内容写在最前面，让自己不要忘记。</p>
 
