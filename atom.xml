@@ -4,7 +4,7 @@
   <title><![CDATA[折迹的博客]]></title>
   <link href="http://bylu.me/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2016-02-16T18:20:27+08:00</updated>
+  <updated>2016-06-22T14:53:24+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -12,6 +12,135 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[关于SSH KEY 以及管理多个 SSH KEY]]></title>
+    <link href="http://bylu.me/blog/2016/06/21/guan-li-duo-ge-ssh-key/"/>
+    <updated>2016-06-21T17:01:18+08:00</updated>
+    <id>http://bylu.me/blog/2016/06/21/guan-li-duo-ge-ssh-key</id>
+    <content type="html"><![CDATA[<h2>关于SSH KEY</h2>
+
+<p>通常我们使用 SSH 协议来访问 Git 仓库，获得所有仓库的读写权限，这样每次操作都不需要再输入账号和密码了。</p>
+
+<p>关于SSH协议可参考中文维基百科 (<a href="http://zh.wikipedia.org/zh/Secure_Shell">http://zh.wikipedia.org/zh/Secure_Shell</a>)</p>
+
+<p>目前主流的代码托管平台，比如Github，是一个仓库可以有多个公钥，但一个公钥只能认证一个用户，但一个用户可以拥有多个公钥。</p>
+
+<h3>生成SSH KEY</h3>
+
+<p>打开终端，输入ssh-keygen -t rsa -C “username@example.com”,( 注册的邮箱)，接下来点击enter键即可（也可以输入密码）</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh-keygen -t rsa -C bailu@doumob.com
+</span><span class='line'>Generating public/private rsa key pair.
+</span><span class='line'>Enter file in which to save the key <span class="o">(</span>/Users/bailu/.ssh/id_rsa<span class="o">)</span>:
+</span><span class='line'>/Users/bailu/.ssh/id_rsa_codingnet
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>成功之后</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Your identification has been saved in /Users/bailu/.ssh/id_rsa_codingnet.
+</span><span class='line'>Your public key has been saved in /Users/bailu/.ssh/id_rsa_codingnet.pub.
+</span><span class='line'>The key fingerprint is:
+</span><span class='line'>SHA256:NB+nvyQErZft02UwWmDl5foQrdDye70qHNmP0NxRPjU bailu@doumob.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注意：<code>/Users/bailu/.ssh/id_rsa_codingnet</code>为设定的私钥文件路径和名称，<code>id_rsa_codingnet.pub</code>为公钥，文件名称根据不同代码托管平台起不同的名称，已示区分，可以管理多个KEY</p>
+
+<p>然后</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/.ssh
+</span><span class='line'>cat id_rsa.pub
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
+
+
+<h3>添加公钥</h3>
+
+<p>复制公钥内容粘贴到托管平台账户的SSH公钥设置页面</p>
+
+<h3>测试</h3>
+
+<p>SSH KEY 公钥添加成功后，输入</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh -T git@git.coding.net
+</span><span class='line'>Warning: Permanently added the RSA host key <span class="k">for</span> IP address <span class="s1">&#39;59.56.27.71&#39;</span> to the list of known hosts.
+</span><span class='line'>Hello doumob You<span class="err">&#39;</span>ve connected to Coding.net by SSH successfully!
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>管理多个 SSH KEY</h2>
+
+<p>当之前已经有了向github提交的SSH Key，则测试不成功</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh -T git@git.coding.net
+</span><span class='line'>The authenticity of host <span class="s1">&#39;git.coding.net (14.215.101.70)&#39;</span> can<span class="s1">&#39;t be established.</span>
+</span><span class='line'><span class="s1">RSA key fingerprint is SHA256:jok3FH7q5LJ6qvE7iPNehBgXRw51ErE77S0Dn+Vg/Ik.</span>
+</span><span class='line'><span class="s1">Are you sure you want to continue connecting (yes/no)? yes</span>
+</span><span class='line'><span class="s1">Warning: Permanently added &#39;</span>git.coding.net,14.215.101.70<span class="err">&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+</span><span class='line'>Permission denied <span class="o">(</span>publickey<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这时候需要修改配置文件
+在 ~/.ssh 目录下新建一个config文件
+添加内容：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># codingnet  
+</span><span class='line'>Host git.coding.net
+</span><span class='line'>HostName git.coding.net
+</span><span class='line'>User bailu@doumob.com
+</span><span class='line'>PreferredAuthentications publickey
+</span><span class='line'>IdentityFile ~/.ssh/id_rsa_codingnet
+</span><span class='line'>
+</span><span class='line'># github  
+</span><span class='line'>Host github.com
+</span><span class='line'>HostName github.com
+</span><span class='line'>User ruanjianbai@gmail.com
+</span><span class='line'>PreferredAuthentications publickey
+</span><span class='line'>IdentityFile ~/.ssh/id_rsa</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>再测试，则成功！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[常用的 Markdown 语法]]></title>

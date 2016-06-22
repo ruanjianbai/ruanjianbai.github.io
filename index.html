@@ -9,9 +9,7 @@
   <meta name="author" content="白 禄">
 
   
-  <meta name="description" content="所有用到过的 Markdown 语法都总结记录在这里，持续更新。 代码块语法高亮语法： {% codeblock [lang:language] [title] [url] [link text] %}
-code snippet
-{% endcodeblock %} 或者 ``` [ &hellip;">
+  <meta name="description" content="关于SSH KEY 通常我们使用 SSH 协议来访问 Git 仓库，获得所有仓库的读写权限，这样每次操作都不需要再输入账号和密码了。 关于SSH协议可参考中文维基百科 (http://zh.wikipedia.org/zh/Secure_Shell) 目前主流的代码托管平台，比如Github， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,88 @@ code snippet
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/" text-decoration: none>关于SSH KEY 以及管理多个 SSH KEY</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-06-21T17:01:18+08:00'><span class='date'>2016 年 6 月 21 日</span> <span class='time'>5:01 pm</span></time>
+        
+           | <a href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/#disqus_thread"
+             data-disqus-identifier="http://bylu.me/blog/2016/06/21/guan-li-duo-ge-ssh-key/" text-decoration: none;>评论</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>关于SSH KEY</h2>
+
+<p>通常我们使用 SSH 协议来访问 Git 仓库，获得所有仓库的读写权限，这样每次操作都不需要再输入账号和密码了。</p>
+
+<p>关于SSH协议可参考中文维基百科 (<a href="http://zh.wikipedia.org/zh/Secure_Shell">http://zh.wikipedia.org/zh/Secure_Shell</a>)</p>
+
+<p>目前主流的代码托管平台，比如Github，是一个仓库可以有多个公钥，但一个公钥只能认证一个用户，但一个用户可以拥有多个公钥。</p>
+
+<h3>生成SSH KEY</h3>
+
+<p>打开终端，输入ssh-keygen -t rsa -C “username@example.com”,( 注册的邮箱)，接下来点击enter键即可（也可以输入密码）</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh-keygen -t rsa -C bailu@doumob.com
+</span><span class='line'>Generating public/private rsa key pair.
+</span><span class='line'>Enter file in which to save the key <span class="o">(</span>/Users/bailu/.ssh/id_rsa<span class="o">)</span>:
+</span><span class='line'>/Users/bailu/.ssh/id_rsa_codingnet
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>成功之后</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Your identification has been saved in /Users/bailu/.ssh/id_rsa_codingnet.
+</span><span class='line'>Your public key has been saved in /Users/bailu/.ssh/id_rsa_codingnet.pub.
+</span><span class='line'>The key fingerprint is:
+</span><span class='line'>SHA256:NB+nvyQErZft02UwWmDl5foQrdDye70qHNmP0NxRPjU bailu@doumob.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注意：<code>/Users/bailu/.ssh/id_rsa_codingnet</code>为设定的私钥文件路径和名称，<code>id_rsa_codingnet.pub</code>为公钥，文件名称根据不同代码托管平台起不同的名称，已示区分，可以管理多个KEY</p>
+
+<p>然后</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/.ssh
+</span><span class='line'>cat id_rsa.pub
+</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/" text-decoration: none;>继续阅读</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -448,6 +528,10 @@ code snippet
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/">关于SSH KEY 以及管理多个 SSH KEY</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的 Markdown 语法</a>
       </li>
     
@@ -463,16 +547,12 @@ code snippet
         <a href="/blog/2015/06/12/xie-bo-ke-bu-zou/">写博客</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/06/12/android-wang-luo-pan-duan/">Android 网络判断</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>分类</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+    <li class='category'><a href='/blog/categories/android/'>android (2)</a></li>
 <li class='category'><a href='/blog/categories/mac/'>mac (2)</a></li>
 <li class='category'><a href='/blog/categories/bo-ke/'>博客 (4)</a></li>
 
