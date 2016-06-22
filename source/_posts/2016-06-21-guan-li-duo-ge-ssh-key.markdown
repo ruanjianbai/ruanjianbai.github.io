@@ -7,9 +7,11 @@ categories: Android
 ---
 ##关于SSH KEY
 
-通常我们使用 SSH 协议来访问 Git 仓库，获得所有仓库的读写权限，这样每次操作都不需要再输入账号和密码了。关于SSH协议可参考中文维基百科（http://zh.wikipedia.org/zh/Secure_Shell）
+通常我们使用 SSH 协议来访问 Git 仓库，获得所有仓库的读写权限，这样每次操作都不需要再输入账号和密码了。
 
-目前主流的代码托管平台，像Github,都是一个仓库可以有多个公钥，但一个公钥只能认证一个用户，但一个用户可以拥有多个公钥。
+关于SSH协议可参考中文维基百科 (http://zh.wikipedia.org/zh/Secure_Shell) 
+
+目前主流的代码托管平台，比如Github，是一个仓库可以有多个公钥，但一个公钥只能认证一个用户，但一个用户可以拥有多个公钥。
 
 ###生成SSH KEY
 打开终端，输入ssh-keygen -t rsa -C “username@example.com”,( 注册的邮箱)，接下来点击enter键即可（也可以输入密码）
@@ -17,7 +19,8 @@ categories: Android
 {% codeblock lang:bash%}
 ➜  ~ ssh-keygen -t rsa -C bailu@doumob.com
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/bailu/.ssh/id_rsa): /Users/bailu/.ssh/id_rsa_codingnet
+Enter file in which to save the key (/Users/bailu/.ssh/id_rsa): 
+/Users/bailu/.ssh/id_rsa_codingnet
 {% endcodeblock %}
 
 成功之后
@@ -66,17 +69,17 @@ Permission denied (publickey).
 {% codeblock  %}
 {% raw %} # codingnet {% endraw %} 
 Host git.coding.net
-    HostName git.coding.net
-    User bailu@doumob.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa_codingnet
+HostName git.coding.net
+User bailu@doumob.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_codingnet
 
 {% raw %}# github {% endraw %} 
 Host github.com
-    HostName github.com
-    User ruanjianbai@gmail.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_rsa
+HostName github.com
+User ruanjianbai@gmail.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
 {% endcodeblock %}{% raw %} 
 
 再测试，则成功！
