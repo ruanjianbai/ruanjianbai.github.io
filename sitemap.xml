@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
     <loc>http://bylu.me/blog/2016/06/21/guan-li-duo-ge-ssh-key/</loc>
     <lastmod>2016-06-21T17:01:18+08:00</lastmod>
   </url>
@@ -13,6 +14,14 @@
     <lastmod>2015-12-23T11:57:28+08:00</lastmod>
   </url>
   <url>
+=======
+<<<<<<< HEAD
+    <loc>http://bylu.me/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://bylu.me/</loc>
+=======
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
     <loc>http://bylu.me/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/</loc>
     <lastmod>2015-09-25T12:13:30+08:00</lastmod>
   </url>
@@ -46,5 +55,9 @@
   </url>
   <url>
     <loc>http://bylu.me/blog/categories/mac/</loc>
+<<<<<<< HEAD
+=======
+>>>>>>> 81b382eb71172699f29d84fa44889ea6617ca26e
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
   </url>
 </urlset>
