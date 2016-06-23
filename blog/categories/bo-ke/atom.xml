@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2016-06-23T17:20:45+08:00</updated>
+  <updated>2016-06-23T17:23:21+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -66,7 +66,7 @@ code snippet
     <id>http://bylu.me/blog/2015/06/12/xie-bo-ke-bu-zou</id>
     <content type="html"><![CDATA[<p>写一篇博客的常用步骤，总结如下：</p>
 
-<p>进入octopress目录切换到source分支（默认）
+<p>进入octopress目录切换到 source 分支（默认）
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ <span class="nb">cd </span>octopress
