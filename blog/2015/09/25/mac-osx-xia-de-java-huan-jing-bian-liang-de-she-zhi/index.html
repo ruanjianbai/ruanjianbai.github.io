@@ -5,11 +5,19 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
+<<<<<<< HEAD
   <title>Mac 中配置 Java 环境 - 折迹的博客</title>
   <meta name="author" content="白 禄">
 
   
   <meta name="description" content="目前的 MAC OSX 下默认是没有安装 Java 的， 通常安装jdk有三种方法： 1.在 terminal 下输入java，然后根据提示去下载苹果官方的 openJdk 进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用 jdk1.7 ， &hellip;">
+=======
+  <title>Mac 中配置java 环境 - 折迹的博客</title>
+  <meta name="author" content="白 禄">
+
+  
+  <meta name="description" content="目前的mac osx 下默认是没有安装java的， 通常安装jdk有三种方法： 1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了） 2. &hellip;">
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -27,8 +35,13 @@
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<<<<<<< HEAD
 <link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
 <link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
+=======
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
 
   
 
@@ -36,9 +49,15 @@
 
 <body   >
   <header role="banner"><hgroup>
+<<<<<<< HEAD
   <h1><a href="/"，text-decoration: none;>折迹的博客</a></h1>
   
     <h2>脚踏实地，仰望星空。</h2>
+=======
+  <h1><a href="/">折迹的博客</a></h1>
+  
+    <h2>爱技术，爱生活。</h2>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
   
 </hgroup>
 
@@ -68,7 +87,11 @@
   
   <header>
     
+<<<<<<< HEAD
       <h1 class="entry-title">Mac 中配置 Java 环境</h1>
+=======
+      <h1 class="entry-title">Mac 中配置java 环境</h1>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
     
     
       <p class="meta">
@@ -80,13 +103,18 @@
 <time class='entry-date' datetime='2015-09-25T12:13:30+08:00'><span class='date'>2015 年 9 月 25 日</span> <span class='time'>12:13 pm</span></time>
         
            | <a href="#disqus_thread"
+<<<<<<< HEAD
              data-disqus-identifier="http://bylu.me" text-decoration: none;>评论</a>
+=======
+             data-disqus-identifier="http://bylu.me">评论</a>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
         
       </p>
     
   </header>
 
 
+<<<<<<< HEAD
 <div class="entry-content"><p>目前的 MAC OSX 下默认是没有安装 Java 的，</p>
 
 <h3>通常安装jdk有三种方法：</h3>
@@ -182,6 +210,64 @@
 
 
 <p></p>
+=======
+<div class="entry-content"><p>目前的mac osx 下默认是没有安装java的，</p>
+
+<h3>通常安装jdk有三种方法：</h3>
+
+<p>1.在terminal下输入java，然后根据提示去下载苹果官方的openJdk进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用jdk1.7，该版本已经无法满足我们的需求了）</p>
+
+<p>2.手动去oracle官网下载比较新的jdk版本进行安装</p>
+
+<p>3.在终端执行brew-cask install java，自动安装好最新的java环境（该方法的前提是你要安装有brew-cask,有空再说该工具，先忍住不说）</p>
+
+<h3>设置环境变量</h3>
+
+<pre><code>$ vim .bash_profile 
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export PATH=${JAVA_HOME}/bin:$PATH
+
+$ source .bash_profile
+
+$ echo $JAVA_HOME
+/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+</code></pre>
+
+<h3>查看机器安装了哪些版本的jdk</h3>
+
+<pre><code>$ /usr/libexec/java_home -V
+Matching Java Virtual Machines (3):
+1.8.0_51, x86_64:   "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
+1.6.0_65-b14-468, x86_64:   "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+1.6.0_65-b14-468, i386: "Java SE 6" /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</code></pre>
+
+<p> 此时我的电脑上安装了三个版本的jdk，默认使用最新的版本</p>
+
+<pre><code>$ java -version
+java version "1.8.0_51"
+Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
+Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)
+</code></pre>
+
+<p>如果想切换到jdk1.6,则需要这样设置</p>
+
+<pre><code>$ vim .bash_profile 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+
+$ source .bash_profile
+</code></pre>
+
+<p>此时，再查看</p>
+
+<pre><code>$ java -version
+java version "1.6.0_65"
+Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4828a)
+Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
+</code></pre>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
 </div>
 
 
@@ -218,10 +304,15 @@
     
     <p class="meta">
       
+<<<<<<< HEAD
         <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" text-decoration: none;title="Previous Post: 写博客">&laquo; 写博客</a>
       
       
         <a class="basic-alignment right" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/"  text-decoration: none;title="Next Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">解决 XtraFinder 在 OSX 10.11.1 中闪退问题 &raquo;</a>
+=======
+        <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" title="Previous Post: 写博客">&laquo; 写博客</a>
+      
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
       
     </p>
   </footer>
@@ -242,6 +333,7 @@
   <ul id="recent_posts">
     
       <li class="post">
+<<<<<<< HEAD
         <a href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/">关于SSH KEY 以及管理多个 SSH KEY</a>
       </li>
     
@@ -259,6 +351,25 @@
     
       <li class="post">
         <a href="/blog/2015/06/12/xie-bo-ke-bu-zou/">写博客</a>
+=======
+        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置java 环境</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/12/xie-bo-ke-bu-zou/">写博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/12/android-wang-luo-pan-duan/">Android 网络判断</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/">写给十年后的自己</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/08/guan-yu-da-jian-bo-ke/">写在最前面</a>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
       </li>
     
   </ul>
@@ -266,9 +377,15 @@
 <section>
   <h1>分类</h1>
   <ul id="categories">
+<<<<<<< HEAD
     <li class='category'><a href='/blog/categories/android/'>android (2)</a></li>
 <li class='category'><a href='/blog/categories/mac/'>mac (2)</a></li>
 <li class='category'><a href='/blog/categories/bo-ke/'>博客 (4)</a></li>
+=======
+    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/blog/categories/mac/'>mac (1)</a></li>
+<li class='category'><a href='/blog/categories/bo-ke/'>博客 (3)</a></li>
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
 
   </ul>
 </section>
@@ -279,7 +396,11 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
+<<<<<<< HEAD
   Copyright &copy; 2016 - 白 禄 -
+=======
+  Copyright &copy; 2015 - 白 禄 -
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -312,6 +433,7 @@
 
 
 
+<<<<<<< HEAD
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -326,5 +448,7 @@
     </body>
 </html>
 
+=======
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
 </body>
 </html>

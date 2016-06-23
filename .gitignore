@@ -1,5 +1,20 @@
 .bundle
 .DS_Store
+<<<<<<< HEAD
 db/*.sqlite3
 log/*.log
 tmp/
+=======
+.sass-cache
+.gist-cache
+.pygments-cache
+_deploy
+public
+sass.old
+source.old
+source/_stash
+source/stylesheets/screen.css
+vendor
+node_modules
+Gemfile.lock
+>>>>>>> 4f7f8c18c32359bdf9822fb2ffde49aa37d831fe
