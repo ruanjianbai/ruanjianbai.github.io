@@ -4,7 +4,7 @@
   <title><![CDATA[分类：博客 | 折迹的博客]]></title>
   <link href="http://bylu.me/blog/categories/bo-ke/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2016-06-23T16:29:25+08:00</updated>
+  <updated>2016-06-23T17:20:45+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -66,13 +66,19 @@ code snippet
     <id>http://bylu.me/blog/2015/06/12/xie-bo-ke-bu-zou</id>
     <content type="html"><![CDATA[<p>写一篇博客的常用步骤，总结如下：</p>
 
+<p>进入octopress目录切换到source分支（默认）
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ <span class="nb">cd </span>octopress
+</span><span class='line'>➜  octopress git:<span class="o">(</span><span class="nb">source</span><span class="o">)</span> ✗ git checkout <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
 <p>首先新建博客</p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>rake new_post<span class="o">[</span><span class="p">&amp;</span>ldquo<span class="p">;</span>title<span class="p">&amp;</span>rdquo<span class="p">;</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p>这时候在<code>source/_posts/</code>目录下自动生成对应标题的 markdown 文件，在该文件里写文章</p>
+</span></code></pre></td></tr></table></div></figure>
+这时候在<code>source/_posts/</code>目录下自动生成对应标题的 markdown 文件，在该文件里写文章</p>
 
 <p>注：如果 shell 由 bash 切换到了 zsh ，则直接输入<code>rake new_post</code>，然后会提示输入标题，再输入标题就可以了</p>
 
@@ -87,7 +93,9 @@ code snippet
 </span><span class='line'>git add .
 </span><span class='line'>git commit -m <span class="p">&amp;</span>lsquo<span class="p">;</span>change log<span class="p">&amp;</span>rsquo<span class="p">;</span>
 </span></code></pre></td></tr></table></div></figure>
-预览博客
+说明：执行了<code>rake generate</code>后实际上是将生成好的要发布的内容放到<code>_deploy</code>目录</p>
+
+<p>预览博客
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
 </span></code></pre></td></tr></table></div></figure>
@@ -96,12 +104,15 @@ code snippet
 <p>发布文章
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure>
+说明：执行了<code>rake deploy</code>后实际上是直接将<code>_deploy</code>文件夹的内容推送到远程<code>master</code>分支</p>
 
 <p>每次写完都要将本地 source 资源推送到 github 上
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>git push origin <span class="nb">source</span>
 </span></code></pre></td></tr></table></div></figure></p>
+
+<p>总的来说，在source分支写博客，生成内容，将<code>_deploy</code>推送到<code>master</code>分支显示博客内容，将博客源码推送到远程 source 分支。</p>
 ]]></content>
   </entry>
   
