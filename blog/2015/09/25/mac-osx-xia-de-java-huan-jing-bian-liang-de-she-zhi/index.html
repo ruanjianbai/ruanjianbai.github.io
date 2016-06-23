@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mac 中配置java 环境 - 折迹的博客</title>
+  <title>Mac 中配置 Java 环境 - 折迹的博客</title>
   <meta name="author" content="白 禄">
 
   
@@ -27,8 +27,8 @@
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"，text-decoration: none;>
 
   
 
@@ -36,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">折迹的博客</a></h1>
+  <h1><a href="/"，text-decoration: none;>折迹的博客</a></h1>
   
-    <h2>爱技术，爱生活。</h2>
+    <h2>脚踏实地，仰望星空。</h2>
   
 </hgroup>
 
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Mac 中配置java 环境</h1>
+      <h1 class="entry-title">Mac 中配置 Java 环境</h1>
     
     
       <p class="meta">
@@ -80,7 +80,7 @@
 <time class='entry-date' datetime='2015-09-25T12:13:30+08:00'><span class='date'>2015 年 9 月 25 日</span> <span class='time'>12:13 pm</span></time>
         
            | <a href="#disqus_thread"
-             data-disqus-identifier="http://bylu.me">评论</a>
+             data-disqus-identifier="http://bylu.me" text-decoration: none;>评论</a>
         
       </p>
     
@@ -143,6 +143,104 @@ java version "1.6.0_65"
 Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468-11M4828a)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 </code></pre>
+
+<hr />
+
+<p>目前的 MAC OSX 下默认是没有安装 Java 的，</p>
+
+<h3>通常安装jdk有三种方法：</h3>
+
+<p>1.在 terminal 下输入<code>java</code>，然后根据提示去下载苹果官方的 openJdk 进行安装, 但目前的版本只有1.6的（随着Android 5.0 默认需要使用 jdk1.7 ，该版本已经无法满足我们的需求了）</p>
+
+<p>2.手动去 oracle 官网下载比较新的 jdk 版本进行安装</p>
+
+<p>3.在终端执行<code>brew-cask install java</code>，自动安装好最新的 java 环境（该方法的前提是你要安装有 brew-cask ,有空再说该工具，先忍住不说）</p>
+
+<h3>设置环境变量</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
+</span><span class='line'>  
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">JAVA_HOME</span><span class="k">}</span>/bin:<span class="nv">$PATH</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$JAVA_HOME</span>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
+
+
+<h3>查看机器安装了哪些版本的jdk</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>/usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines <span class="o">(</span>3<span class="o">)</span>:
+</span><span class='line'>1.8.0_51, x86_64:<span class="s2">&quot;Java SE 8&quot;</span> /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/ Home
+</span><span class='line'>1.6.0_65-b14-468, x86_64:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>1.6.0_65-b14-468,i386:<span class="s2">&quot;Java SE 6&quot;</span> /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+此时我的电脑上安装了三个版本的 jdk ，默认使用最新的版本</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.8.0_51&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.8.0_51-b16<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 25.51-b03, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>   <br/>
+如果想切换到 jdk1.6 ,则需要这样设置</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vim .bash_profile
+</span><span class='line'><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home -v 1.6<span class="k">)</span>
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> .bash_profile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>此时，再查看</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>java -version
+</span><span class='line'>java version <span class="s2">&quot;1.6.0_65&quot;</span>
+</span><span class='line'>Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.6.0_65-b14-468-11M4828a<span class="o">)</span>
+</span><span class='line'>Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 20.65-b04-468, mixed mode<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 </div>
 
 
@@ -179,8 +277,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" title="Previous Post: 写博客">&laquo; 写博客</a>
+        <a class="basic-alignment left" href="/blog/2015/06/12/xie-bo-ke-bu-zou/" text-decoration: none;title="Previous Post: 写博客">&laquo; 写博客</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/"  text-decoration: none;title="Next Post: 解决 XtraFinder 在 OSX 10.11.1 中闪退问题">解决 XtraFinder 在 OSX 10.11.1 中闪退问题 &raquo;</a>
       
     </p>
   </footer>
@@ -201,23 +301,23 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置java 环境</a>
+        <a href="/blog/2016/06/21/guan-li-duo-ge-ssh-key/">关于SSH KEY 以及管理多个 SSH KEY</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/29/de-markdownyu-fa/">常用的 Markdown 语法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/23/jie-jue-xtrafinder-zai-osx-ei-capitanzhong-shan-tui-wen-ti/">解决 XtraFinder 在 OSX 10.11.1 中闪退问题</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/25/mac-osx-xia-de-java-huan-jing-bian-liang-de-she-zhi/">Mac 中配置 Java 环境</a>
       </li>
     
       <li class="post">
         <a href="/blog/2015/06/12/xie-bo-ke-bu-zou/">写博客</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/12/android-wang-luo-pan-duan/">Android 网络判断</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/14/xie-gei-shi-nian-hou-de-zi-ji/">写给十年后的自己</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/08/guan-yu-da-jian-bo-ke/">写在最前面</a>
       </li>
     
   </ul>
@@ -225,9 +325,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 <section>
   <h1>分类</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
-<li class='category'><a href='/blog/categories/mac/'>mac (1)</a></li>
-<li class='category'><a href='/blog/categories/bo-ke/'>博客 (3)</a></li>
+    <li class='category'><a href='/blog/categories/android/'>android (2)</a></li>
+<li class='category'><a href='/blog/categories/mac/'>mac (2)</a></li>
+<li class='category'><a href='/blog/categories/bo-ke/'>博客 (4)</a></li>
 
   </ul>
 </section>
@@ -270,6 +370,20 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 
 
 
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Untitled Document</title>
+        <script type="text/javascript" src="http://arrow.scrolltotop.com/arrow37.js"></script>
+<noscript>Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top Button</a>? Go to our FAQ page for more info.</noscript>
+    </head>
+    
+    <body>
+
+    </body>
+</html>
 
 </body>
 </html>
