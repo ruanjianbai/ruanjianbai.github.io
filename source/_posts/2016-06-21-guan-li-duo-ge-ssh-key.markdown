@@ -89,7 +89,7 @@ IdentityFile ~/.ssh/id_rsa
 ➜  ~ ssh-add /Users/bailu/.ssh/id_rsa_codingnet
 {% endcodeblock %}
 
-可以通过 `ssh-add -l` 来确私钥列表
+可以通过 `ssh-add -l` 来确认私钥列表
 
 {% codeblock lang:bash%}
 
