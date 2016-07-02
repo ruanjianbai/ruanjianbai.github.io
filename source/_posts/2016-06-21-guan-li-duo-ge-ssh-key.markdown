@@ -80,7 +80,22 @@ HostName github.com
 User ruanjianbai@gmail.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa
-{% endcodeblock %}{% raw %} 
+{% endcodeblock %} 
+
+添加私钥
+
+{% codeblock lang:bash%}
+➜  ~ ssh-add /Users/bailu/.ssh/id_rsa
+➜  ~ ssh-add /Users/bailu/.ssh/id_rsa_codingnet
+{% endcodeblock %}
+
+可以通过 `ssh-add -l` 来确私钥列表
+
+{% codeblock lang:bash%}
+
+➜  ~ ssh-add -l
+
+{% endcodeblock %}
 
 再测试，则成功！
 

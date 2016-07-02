@@ -7,7 +7,7 @@ categories: 博客
 ---
 写一篇博客的常用步骤，总结如下：
 
-进入octopress目录并切换到source分支
+进入 octopress 目录切换到 source 分支（默认）
 {% codeblock lang:bash  %}
 ➜  ~ cd octopress
 ➜  octopress git:(source) ✗ git checkout source
@@ -28,31 +28,23 @@ rake generate
 git add . 
 git commit -m 'change log'
 {% endcodeblock %}
+说明：执行了`rake generate`后实际上是将生成好的要发布的内容放到`_deploy`目录
+
 预览博客
 {% codeblock lang:bash  %}
-rake generate
+rake preview
 {% endcodeblock %}
 在浏览器里打开 `http://localhost:4000/` 进行预览，
+
+发布文章
+{% codeblock lang:bash  %}
+rake deploy
+{% endcodeblock %}
+说明：执行了`rake deploy`后实际上是直接将`_deploy`文件夹的内容推送到远程`master`分支
 
 每次写完都要将本地 source 资源推送到 github 上
 {% codeblock lang:bash  %}
 git push origin source
 {% endcodeblock %}
 
-切换到master分支并合并source分支
-
-{% codeblock lang:bash  %}
-➜  octopress git:(source) ✗ git checkout master
-➜  octopress git:(master) ✗ git merge source
-{% endcodeblock %}
-
-发布文章
-{% codeblock lang:bash  %}
-rake generate
-rake deploy
-{% endcodeblock %}
-
-最好在发布前先预览一下，没有问题再deploy
-{% codeblock lang:bash  %}
-rake preview
-{% endcodeblock %}
+总的来说，在 source 分支写博客，生成内容，将`_deploy`推送到`master`分支显示博客内容，将博客源码推送到远程 source 分支。
