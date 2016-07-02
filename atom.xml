@@ -4,7 +4,7 @@
   <title><![CDATA[折迹的博客]]></title>
   <link href="http://bylu.me/atom.xml" rel="self"/>
   <link href="http://bylu.me/"/>
-  <updated>2016-06-23T17:28:45+08:00</updated>
+  <updated>2016-07-02T16:40:33+08:00</updated>
   <id>http://bylu.me/</id>
   <author>
     <name><![CDATA[白 禄]]></name>
@@ -137,6 +137,22 @@
 
 
 <p></p>
+
+<p>添加私钥</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh-add /Users/bailu/.ssh/id_rsa
+</span><span class='line'>➜  ~ ssh-add /Users/bailu/.ssh/id_rsa_codingnet
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以通过 <code>ssh-add -l</code> 来确私钥列表</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>➜  ~ ssh-add -l
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>再测试，则成功！</p>
 ]]></content>
